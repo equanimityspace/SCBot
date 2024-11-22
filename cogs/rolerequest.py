@@ -1,7 +1,6 @@
 import nextcord
 from nextcord import Interaction, slash_command
 from nextcord.ui import Button, View
-from nextcord.ext import commands
 from nextcord.ext.commands import Bot, Cog
 
 # Create Button
