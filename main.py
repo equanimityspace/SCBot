@@ -17,10 +17,12 @@ bot.load_extension('cogs.buttons')
 
 # load ticket management cogs
 bot.load_extension("cogs.rename")
+bot.load_extension('cogs.transcript')
 
 # load misc cogs
 bot.load_extension("cogs.ping")
 bot.load_extension("cogs.nat")
+bot.load_extension("cogs.daniel")
 
 # blast off
 bot.run(token)

@@ -14,7 +14,7 @@ class TicketButton(View):
         self.add_item(button)
 
 # Create ticket embed
-class TicketEmbed():
+class AttorneyEmbed():
     @staticmethod
     # create embed
     async def ticket_embed(channel) -> None:

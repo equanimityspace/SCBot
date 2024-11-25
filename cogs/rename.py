@@ -12,7 +12,7 @@ class RenameChannel(Cog):
         channel = inter.channel
         channel_category = inter.channel.category_id
         guild = inter.guild
-        ticket_category = 1309294281034301552
+        ticket_category = 1309294281034301552 # TODO fix ticket category
 
         # rename channel if it is in the ticket category
         if channel_category == ticket_category:

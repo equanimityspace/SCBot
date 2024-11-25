@@ -1,7 +1,11 @@
 import nextcord
 from nextcord import Interaction
 from nextcord.ext import commands
-from cogs.attorneyrequest import TicketEmbed
+from cogs.attorneyrequest import AttorneyEmbed
+from cogs.employmentapp import EmploymentEmbed
+from cogs.feedback import FeedbackEmbed
+from cogs.rolerequest import RoleEmbed
+from cogs.clientticket import ClientEmbed
 
 # Ticket Request Ticket Button Callback
 class TicketRequestButton(commands.Cog):
@@ -23,28 +27,28 @@ class TicketRequestButton(commands.Cog):
         try:
             if inter.data["custom_id"] == "0":    
                 channel = await category.create_text_channel(name=f'{inter.user}-attorney-request', topic="Attorney Request Ticket", overwrites=overwrites)
-                await TicketEmbed.ticket_embed(channel)
-                await inter.send(f'Ticket created successfully', ephemeral=True)
+                await AttorneyEmbed.ticket_embed(channel)
+                await inter.send('Ticket created successfully', ephemeral=True)
 
             elif inter.data["custom_id"] == "1":
                 channel = await category.create_text_channel(name=f'{inter.user}-client-request', topic="S&C Client Request Ticket", overwrites=overwrites)
-                await TicketEmbed.ticket_embed(channel)
-                await inter.send(f'Ticket created successfully', ephemeral=True)
+                await ClientEmbed.ticket_embed(channel)
+                await inter.send('Ticket created successfully', ephemeral=True)
 
             elif inter.data["custom_id"] == "2":
                 channel = await category.create_text_channel(name=f'{inter.user}-employment-application', topic="Employment Request Ticket", overwrites=overwrites)
-                await TicketEmbed.ticket_embed(channel)
-                await inter.send(f'Ticket created successfully', ephemeral=True)
+                await EmploymentEmbed.ticket_embed(channel)
+                await inter.send('Ticket created successfully', ephemeral=True)
 
             elif inter.data["custom_id"] == "3":   
                 channel = await category.create_text_channel(name=f'{inter.user}-feedback', topic="Provide feedback to Ryan and Fred", overwrites=overwrites)
-                await TicketEmbed.ticket_embed(channel)
-                await inter.send(f'Ticket created successfully', ephemeral=True)
+                await FeedbackEmbed.ticket_embed(channel)
+                await inter.send('Ticket created successfully', ephemeral=True)
 
             elif inter.data["custom_id"] == "4":   
                 channel = await category.create_text_channel(name=f'{inter.user}-role-request', topic="Role Request Ticket", overwrites=overwrites)
-                await TicketEmbed.ticket_embed(channel)
-                await inter.send(f'Ticket created successfully', ephemeral=True)                    
+                await RoleEmbed.ticket_embed(channel)
+                await inter.send('Ticket created successfully', ephemeral=True)                  
         except:
             print('Event Logged')
 
